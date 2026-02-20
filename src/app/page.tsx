@@ -1,4 +1,19 @@
 export default function Home() {
+  // #region agent log
+  fetch("http://127.0.0.1:7395/ingest/303de73a-969c-42fd-8a4b-917e69820b4a", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "1875f0" },
+    body: JSON.stringify({
+      sessionId: "1875f0",
+      runId: "pre-fix",
+      hypothesisId: "H2",
+      location: "src/app/page.tsx:1",
+      message: "Home page rendered",
+      data: { route: "/" },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
   return (
     <div className="grid gap-6 py-12">
       <section className="rounded-2xl bg-indigo-600 px-8 py-12 text-white shadow-lg">
